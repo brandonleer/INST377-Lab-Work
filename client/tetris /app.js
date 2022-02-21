@@ -64,14 +64,14 @@ document.addEventListener('DOMContentLoaded', () => {
     current.forEach((index) => {
       squares[currentPosition + index].classList.add('tetromino');
       squares[currentPosition + index].style.backgroundColor = colors[random]
-    });
+    })
   }
   function undraw() {
     current.forEach((index) => {
       squares[currentPosition + index].classList.remove('tetromino');
       squares[currentPosition + index].style.backgroundColor = ''
 
-    });
+    })
   }
 
   // timerId = setInterval(moveDown, 1000)
@@ -136,11 +136,11 @@ document.addEventListener('DOMContentLoaded', () => {
     displaySquares.forEach((square) => {
       square.classList.remove('tetromino');
       square.style.backgroundColor = ''
-    });
+    })
     upNextTetrominoes[nextRandom].forEach((index) => {
       displaySquares[displayIndex + index].classList.add('tetromino');
       displaySquares[displayIndex + index].style.backgroundColor = colors[nextRandom]
-    });
+    })
   }
   function freeze() {
     if (current.some((index) => squares[currentPosition + index + width].classList.contains('taken'))) {
@@ -165,7 +165,8 @@ document.addEventListener('DOMContentLoaded', () => {
       nextRandom = Math.floor(Math.random() * theTetrominoes.length);
       displayShape();
     }
-  });
+  })
+
   function addScore() {
     for (let i = 0; i < 199; i += width) {
       const row = [i, i + 1, i + 2, i + 3, i + 4, i + 5, i + 6, i + 7, i + 8, i + 9];
@@ -177,7 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
           squares[index].classList.remove('taken');
           squares[index].classList.remove('tetromino');
           squares[index].style.backgroundColor = '';
-        });
+        })
         const squaresRemoved = squares.splice(i, width);
         squares = squaresRemoved.concat(squares);
         squares.forEach((cell) => grid.appendChild(cell));
@@ -190,5 +191,4 @@ document.addEventListener('DOMContentLoaded', () => {
       clearInterval(timerId);
     }
   }
-
 })
