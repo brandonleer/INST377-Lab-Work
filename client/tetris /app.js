@@ -66,6 +66,8 @@ document.addEventListener('DOMContentLoaded', () => {
   function undraw() {
     current.forEach((index) => {
       squares[currentPosition + index].classList.remove('tetromino');
+      squares[currentPosition + index].style.backgroundColor = ''
+
     });
   }
 
