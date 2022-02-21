@@ -60,6 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function draw() {
     current.forEach((index) => {
       squares[currentPosition + index].classList.add('tetromino');
+      squares[currentPosition + index].style.backgroundColor = colors[random]
     });
   }
   function undraw() {
@@ -129,9 +130,11 @@ document.addEventListener('DOMContentLoaded', () => {
   function displayShape() {
     displaySquares.forEach((square) => {
       square.classList.remove('tetromino');
+      square.style.backgroundColor = ''
     });
     upNextTetrominoes[nextRandom].forEach((index) => {
       displaySquares[displayIndex + index].classList.add('tetromino');
+      displaySquares[displayIndex + index].style.backgroundColor = colors[nextRandom]
     });
   }
   function freeze() {
