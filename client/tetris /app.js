@@ -190,5 +190,4 @@ document.addEventListener('DOMContentLoaded', () => {
       scoreDisplay.innerHTML = 'end';
       clearInterval(timerId);
     }
-  }
-})
+  })
