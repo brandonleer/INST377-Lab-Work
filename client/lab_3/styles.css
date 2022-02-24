@@ -3,6 +3,14 @@
     padding: 0;
     box-sizing: border-box;
   }
+  .Title{
+    display: flex;
+    justify-content: flex-start;
+    background-color: rgba(0,139, 139,0.8);
+    font-size: xx-small;
+    padding: 10px;
+  }
+
   .menu-container {
     color: #fff;
     background-color: #5995DA;  /* Blue */
@@ -14,7 +22,7 @@
     border: 1px solid #fff;
     width: 900px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
   }  
   @media only screen and (max-width: 400px) {
     body {
@@ -30,4 +38,62 @@
     body {
       background-color: #B2D6FF; /* Blue */
     }
+  }
+  .links {
+    border: 1px solid #fff;  /* For debugging */
+    display: flex;
+    justify-content: flex-end;
+  }
+  .header-container {
+    color: #5995DA;
+    background-color: #D6E9FE;
+    display: flex;
+    justify-content: center;
+  }
+  .header {
+    width: 900px;
+    height: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;  /* Add this */
+  }
+  .photo-grid-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .photo-grid {
+    width: 900px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  
+  .photo-grid-item {
+    border: 1px solid #fff;
+    width: 300px;
+    height: 300px;
+  }
+.Project,
+.Github {
+  align-self: flex-end;
+  margin-bottom: 20px;
+}
+.footer {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .footer-item {
+    border: 1px solid #fff;
+    background-color: #D6E9FE;
+    height: 200px;
+    flex: 1;
+  }
+  .footer-one,
+  .footer-three {
+    background-color: #5995DA;
+    flex: initial;
+    width: 300px;
   }
