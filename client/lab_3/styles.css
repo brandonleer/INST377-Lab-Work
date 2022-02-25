@@ -24,23 +24,7 @@
     display: flex;
     justify-content: space-between;
   }  
-  @media only screen and (max-width: 400px) {
-    body {
-      background-color: #F09A9D; /* Red */
-    }
-  }
-  @media only screen and (min-width: 401px) and (max-width: 960px) {
-    body {
-      background-color: #F5CF8E; /* Yellow */
-    }
-  }
-  @media only screen and (min-width: 961px) {
-    body {
-      background-color: #B2D6FF; /* Blue */
-    }
-  }
   .links {
-    border: 1px solid #fff;  /* For debugging */
     display: flex;
     justify-content: flex-end;
   }
@@ -60,6 +44,7 @@
   .photo-grid-container {
     display: flex;
     justify-content: center;
+    align-items: center;
   }
   
   .photo-grid {
@@ -96,4 +81,23 @@
     background-color: #5995DA;
     flex: initial;
     width: 300px;
+  }
+  .page {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  @media only screen and (max-width: 400px) {
+    body {
+      background-color: #F09A9D; /* Red */
+    }
+  }
+  @media only screen and (min-width: 401px) and (max-width: 960px) {
+    body {
+      background-color: #F5CF8E; /* Yellow */
+    }
+  }
+  @media only screen and (min-width: 961px) {
+    body {
+      background-color: #B2D6FF; /* Blue */
+    }
   }
