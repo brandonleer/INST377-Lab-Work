@@ -10,62 +10,65 @@
     font-size: xx-small;
     padding: 10px;
   }
-
   .menu-container {
     color: #fff;
     background-color: #5995DA;  /* Blue */
-    padding: 20px 0;
+    padding: 20px 0px;
     display: flex;
-    justify-content: center;    
+    justify-content: center;
+
   }
   .menu {
     border: 1px solid #fff;
     width: 900px;
-    display: flex;
     justify-content: space-between;
-  }  
+    display: flex;
+  }
   .links {
+    border: 1px solid #fff;
     display: flex;
     justify-content: flex-end;
   }
-  .header-container {
+  .homepage {
+    margin-left: 20px;
+  }
+.header-container {
     color: #5995DA;
     background-color: #D6E9FE;
     display: flex;
     justify-content: center;
   }
+  
   .header {
     width: 900px;
     height: 300px;
     display: flex;
     justify-content: space-between;
-    align-items: center;  /* Add this */
+    align-items: center;
+  }
+  .Project,
+  .Github {
+    align-self: flex-end;
+    margin-bottom: 20px;
   }
   .photo-grid-container {
     display: flex;
     justify-content: center;
-    align-items: center;
   }
-  
   .photo-grid {
     width: 900px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    flex-direction: row-reverse;  /* <--- Really freaking cool! */
     align-items: center;
   }
-  
   .photo-grid-item {
     border: 1px solid #fff;
     width: 300px;
     height: 300px;
   }
-.Project,
-.Github {
-  align-self: flex-end;
-  margin-bottom: 20px;
-}
-.footer {
+  .footer {
     display: flex;
     justify-content: space-between;
   }
@@ -76,28 +79,10 @@
     height: 200px;
     flex: 1;
   }
+
   .footer-one,
   .footer-three {
     background-color: #5995DA;
     flex: initial;
     width: 300px;
-  }
-  .page {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  @media only screen and (max-width: 400px) {
-    body {
-      background-color: #F09A9D; /* Red */
-    }
-  }
-  @media only screen and (min-width: 401px) and (max-width: 960px) {
-    body {
-      background-color: #F5CF8E; /* Yellow */
-    }
-  }
-  @media only screen and (min-width: 961px) {
-    body {
-      background-color: #B2D6FF; /* Blue */
-    }
   }
