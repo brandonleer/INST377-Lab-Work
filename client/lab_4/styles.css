@@ -90,6 +90,9 @@
       max-width: 600px;
       position: relative;
   }
+  .carousel .carousel_item, .carousel .carousel_item--hidden{
+    display: none;
+  }
   .carousel .carousel_item img{
     width: 100%;
     max-width: 600px;
