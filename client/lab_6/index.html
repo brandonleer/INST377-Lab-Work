@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="'en">
+    <head>
+        <meta charset='UTF-8'/>
+        <title>Brandon Leer Lab 5: HTML Forms</title>
+        <link rel='stylesheet' href='styles.css'/>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="container">
+                <div class="title has-background-link">
+                    <h1>Brandon Leer's Lab 5</h1>
+                </div>
+                <div class="columns is-multiline">
+                    <div class="columns is-offset-one-fifth is-vcentered is-5">
+                        <div class="box">
+                            <strong>First Name</strong>
+                            <div class="pt-3"></div>
+                            <input class="input is-small" type="text">
+                            <div class="pt-3"></div>
+                            <strong>Food Preference</strong>
+                            <div class="pt-3"></div>
+                            <input class="input is-small" type="text">
+                            <div class="pt-3"></div>
+                            <strong>Veggie or Vegan?</strong>
+                            <div class="pt-3"></div>
+                            <div class="control">
+                                <label class="radio">
+                                  <input type="radio" name="answer">Yes</label>
+                                <label class="radio">
+                                  <input type="radio" name="answer">No</label>
+                            </div>
+                            <div class="pt-3"></div>
+                            <form class="main_form">
+                                <button class="button submit_button" type="submit">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="page_item">
+                        <h2>Restaurant List</h2>
+                        <ul id="resto-list"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+ </html>
