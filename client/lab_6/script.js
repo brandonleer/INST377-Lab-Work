@@ -15,9 +15,9 @@ function dataHandler(dataArray) {
   });
   console.log(listItems);
   return listItems;
-  range.forEach((item) => {
-  console.log('range item', item);
-  });
+  // range.forEach((item) => {
+  // console.log('range item', item);
+ // });
 }
 
   function createHtmlList(collection) {
@@ -32,7 +32,6 @@ function dataHandler(dataArray) {
       const injectThisItem = '<li>${displayName}</li>';
       targetList.innerHTML += injectThisItem;
     }));
-
 async function mainEvent() { // the async keyword means we can make API requests
   const form = document.querySelector('.main_form');
   const submit = document.querySelector('.submit_button');
@@ -53,6 +52,5 @@ async function mainEvent() { // the async keyword means we can make API requests
     });
   }
 }
-
 // this actually runs first! It's calling the function above
 document.addEventListener('DOMContentLoaded', async () => mainEvent());
