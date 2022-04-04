@@ -28,8 +28,7 @@ function createHtmlList(collection) {
   collection.forEach((item) => {
     const {name} = item;
     const displayName = name.toLowerCase();
-    // eslint-disable-next-line no-template-curly-in-string
-    const injectThisItem = '<li>${displayName}</li>';
+    const injectThisItem = `<li>${displayName}</li>`;
     targetList.innerHTML += injectThisItem;
   });
 }
