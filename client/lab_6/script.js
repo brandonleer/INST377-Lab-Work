@@ -7,20 +7,20 @@ function getRandomIntInclusive(min, max) {
 }
 function dataHandler(dataArray) {
   console.log('fired dataHandler');
-  // console.table(dataArray);
+  console.table(dataArray);
   const range = [...Array(15).keys()];
   const listItems = range.map((item, index) => {
     const restNum = getRandomIntInclusive(0, dataArray.length - 1);
     return dataArray[restNum];
   });
-  // console.log(listItems);
+  console.log(listItems);
   return listItems;
-  //  range.forEach((item) => {
-  //  console.log('range item', item);
-  // });
-  // }
+  range.forEach((item) => {
+  console.log('range item', item);
+  });
+}
 
-  function createHtmlList(collection)) {
+  function createHtmlList(collection) {
     console.log('fired HTML creator');
     console.log(collection);
     const targetList = document.querySelector('.resto-list');
@@ -32,8 +32,7 @@ function dataHandler(dataArray) {
       const injectThisItem = '<li>${displayName}</li>';
       targetList.innerHTML += injectThisItem;
     }));
-  }
-}
+
 async function mainEvent() { // the async keyword means we can make API requests
   const form = document.querySelector('.main_form');
   const submit = document.querySelector('.submit_button');
@@ -54,5 +53,6 @@ async function mainEvent() { // the async keyword means we can make API requests
     });
   }
 }
+
 // this actually runs first! It's calling the function above
-document.addEventListener('DOMContentLoaded', async () => mainEvent());
+document.addEventListener('DOMContentLoaded', async () => mainEvent())
