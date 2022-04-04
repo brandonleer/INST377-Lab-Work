@@ -32,7 +32,13 @@
     flex-direction: column;
     padding: 15px;
     border-radius: 4px;
-    background-color: #efefef;
+    background-color: #f8f1f1;
     height: fit-content;
     margin: 20px;
+  }
+  .form_item {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 5px;
   }
