@@ -20,12 +20,12 @@ function dataHandler(dataArray) {
   // });
   // }
 
-  function createHtmlList(collection) {
+  function createHtmlList(restoArray) {
     console.log('fired HTML creator');
-    console.log(collection);
+    console.log(restoArray);
     const targetList = document.querySelector('.resto-list');
     targetList.innerHTML = '';
-    collection.forEach(((item) => {
+    restoArray.forEach(((item) => {
       const {name} = item;
       const displayName = name.toLowerCase();
       // eslint-disable-next-line no-template-curly-in-string
