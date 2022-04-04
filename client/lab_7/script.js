@@ -50,8 +50,8 @@ async function mainEvent() { // the async keyword means we can make API requests
       if (currentArray === undefined) { return; }
       console.log(event.target.value);
       const selectResto = currentArray.filter((item) => item.name.includes(event.target.value));
-      createHtmlList(selectResto);
-      // console.log(matchResto);
+      console.log(selectResto);
+      // createHtmlList(selectResto);
     });
 
     form.addEventListener('submit', async (submitEvent) => { // async has to be declared all the way to get an await
