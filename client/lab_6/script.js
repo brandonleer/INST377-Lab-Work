@@ -20,9 +20,9 @@ function dataHandler(dataArray) {
   // });
   // }
 
-  function createHtmlList(restoArray) {
+  function createHtmlList(collection)) {
     console.log('fired HTML creator');
-    console.log(restoArray);
+    console.log(collection);
     const targetList = document.querySelector('.resto-list');
     targetList.innerHTML = '';
     restoArray.forEach(((item) => {
