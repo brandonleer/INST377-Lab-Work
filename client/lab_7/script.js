@@ -49,7 +49,11 @@ async function mainEvent() { // the async keyword means we can make API requests
     resto.addEventListener('input', async (event) => {
       if (currentArray === undefined) { return; }
       console.log(event.target.value);
-      const selectResto = currentArray.filter((item) => item.name.includes(event.target.value));
+      const selectResto = currentArray.filter((item) => {
+        const lowerName = item.name.toLowerCase();
+        const lowerValue = event.target.value.toLowerCase();
+        return lowerName.includes(lowerValue);
+      });
       console.log(selectResto);
       // createHtmlList(selectResto);
     });
