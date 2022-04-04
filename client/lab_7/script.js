@@ -50,9 +50,9 @@ async function mainEvent() { // the async keyword means we can make API requests
       if (currentArray === undefined) { return; }
       console.log(event.target.value);
       const matchResto = currentArray.filter((item) => {
-          console.log(item);
-          console.log(item.name);
-          return item.name.includes(event.target.value);
+        console.log(item);
+        console.log(item.name);
+        return item.name.includes(event.target.value);
       });
       console.log(matchResto);
     });
@@ -62,9 +62,10 @@ async function mainEvent() { // the async keyword means we can make API requests
       // console.log('form submission'); // this is substituting for a "breakpoint"
       submit.style.display = 'block'; // arrayFromJson.data - we're accessing a key called 'data' on the returned object
       // it contains all 1,000 records we need
-      const restoArray = restoArrayMake(arrayFromJson.data);
+      currentArray = restoArrayMake(arrayFromJson.data);
       createHtmlList(restoArray);
     });
-  };
+  }
+}
 // this actually runs first! It's calling the function above
 document.addEventListener('DOMContentLoaded', async () => mainEvent());
