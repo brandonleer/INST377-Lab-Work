@@ -50,8 +50,10 @@ async function mainEvent() { // the async keyword means we can make API requests
       if (currentArray === undefined) { return; }
       console.log(event.target.value);
       const matchResto = currentArray.filter((item) => {
+          console.log(item);
           console.log(item.name);
           return item.name.includes(event.target.value);
+      });
       console.log(matchResto);
     });
 
@@ -63,7 +65,6 @@ async function mainEvent() { // the async keyword means we can make API requests
       const restoArray = restoArrayMake(arrayFromJson.data);
       createHtmlList(restoArray);
     });
-  }
-}
+  };
 // this actually runs first! It's calling the function above
 document.addEventListener('DOMContentLoaded', async () => mainEvent());
