@@ -30,8 +30,7 @@ function createHtmlList(collection){
     const {name} = item;
     const displayName = name.toLowerCase();
     const injectThisItem = '<li>${displayName}</li>';
-    targetList.innerHTML += injectThisItem;
-  });
+    targetList.innerHTML += injectThisItem))};
 };
 async function mainEvent() { // the async keyword means we can make API requests
   const form = document.querySelector('.main_form');
@@ -46,7 +45,7 @@ async function mainEvent() { // the async keyword means we can make API requests
     form.addEventListener('submit', async (submitEvent) => { // async has to be declared all the way to get an await
       submitEvent.preventDefault(); // This prevents your page from refreshing!
       console.log('form submission'); // this is substituting for a "breakpoint"
-      // arrayFromJson.data - we're accessing a key called 'data' on the returned object
+      /submit.style.display = 'block';// arrayFromJson.data - we're accessing a key called 'data' on the returned object
       // it contains all 1,000 records we need
       const restoArray = dataHandler(arrayFromJson.data);
       createHtmlList(restoArray);
@@ -54,4 +53,4 @@ async function mainEvent() { // the async keyword means we can make API requests
   }
 }
 // this actually runs first! It's calling the function above
-document.addEventListener('DOMContentLoaded', async () => mainEvent()); // the async keyword means we can make API requests
+document.addEventListener('DOMContentLoaded', async () => mainEvent()); }// the async keyword means we can make API requests
