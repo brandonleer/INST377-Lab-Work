@@ -49,15 +49,14 @@ async function mainEvent() { // the async keyword means we can make API requests
     resto.addEventListener('input', async (event) => {
       if (currentArray === undefined) { return; }
       console.log(event.target.value);
-      const selectResto = arrayFromJson.filter((item) => {
+      const selectResto = arrayFromJson.data.filter((item) => {
         const lowerName = item.name.toLowerCase();
         const lowerValue = event.target.value.toLowerCase();
         return lowerName.includes(lowerValue);
       });
       console.log(selectResto);
-      // createHtmlList(selectResto);
+      createHtmlList(selectResto);
     });
-
     form.addEventListener('submit', async (submitEvent) => { // async has to be declared all the way to get an await
       submitEvent.preventDefault(); // This prevents your page from refreshing!
       // console.log('form submission'); // this is substituting for a "breakpoint"
