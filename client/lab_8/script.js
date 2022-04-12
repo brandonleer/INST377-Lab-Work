@@ -19,7 +19,31 @@ function restoArrayMake(dataArray) {
   // console.log('range item', item);
   // });
 }
-
+function initMap(targetId) {
+  const latLong = [38.7849, -76.8721];
+  const map = L.map(targetId).setView(latLong, 9);
+  L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    id: 'mapbox/streets-v11',
+    tileSize: 512,
+    zoomOffset: -1,
+    accessToken: 'pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw'
+  }).addTo(map);
+  return map;
+}
+function addMapMarkers(map, collection) {
+  map.eachLayer((layer) => {
+    if (layer instanceof L.Marker) {
+      layer.remove();
+    }
+  });
+  collection.forEach((item) => {
+    const point = item.geocoded_column_1?.coordinates;
+    console.log(item.geocoded_column_1?.coordinates);
+    L.marker([point[1], point[0]]).addTo(map);
+  });
+}
 function createHtmlList(collection) {
   // console.log('fired HTML creator');
   // console.log(collection);
@@ -49,13 +73,25 @@ async function mainEvent() { // the async keyword means we can make API requests
     resto.addEventListener('input', async (event) => {
       if (currentArray === undefined) { return; }
       console.log(event.target.value);
-      const selectResto = arrayFromJson.data.filter((item) => {
+      const selectResto = currentArray.filter((item) => {
         const lowerName = item.name.toLowerCase();
         const lowerValue = event.target.value.toLowerCase();
         return lowerName.includes(lowerValue);
       });
       console.log(selectResto);
       createHtmlList(selectResto);
+    });
+    zipcode.addEventListener('input', async (event) => {
+      if (currentArray === undefined) { return; }
+      console.log(event.target.value);
+      if (currentArray.length < 1) { return; }
+      const zip = currentArray.filter((item) => {
+        const itemzip = item.zip;
+        const zipValue = event.target.value;
+        return itemzip.includes(zipValue);
+      });
+      console.log(zip);
+      createHtmlList(zip);
     });
     form.addEventListener('submit', async (submitEvent) => { // async has to be declared all the way to get an await
       submitEvent.preventDefault(); // This prevents your page from refreshing!
@@ -65,6 +101,7 @@ async function mainEvent() { // the async keyword means we can make API requests
       currentArray = restoArrayMake(arrayFromJson.data);
       console.log(currentArray);
       createHtmlList(currentArray);
+      addMapMarkers(map, currentArray);
     });
   }
 }
