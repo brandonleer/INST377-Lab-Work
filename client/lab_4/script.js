@@ -7,8 +7,7 @@ function updateSlidePosition() {
   for (let slide of slides) {
     slide.classList.remove('carousel_item--visible');
     slide.classList.add('carousel_item--hidden');
-  }
-  slides[slidePosition].classList.add('carousel_item--visible');
+    slides[slidePosition].classList.add('carousel_item--visible');
 }
 
 function moveToNextSlide() {
@@ -36,5 +35,5 @@ document.querySelector('#carousel_button--next')
   });
 document.querySelector('#carousel_button--prev')
   .addEventListener('click', () => {
-    moveToPrevSlide();
-  });
+  moveToPrevSlide();
+  )};
