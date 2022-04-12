@@ -20,8 +20,8 @@ function restoArrayMake(dataArray) {
   // });
 }
 function initMap(targetId) {
-  const latLong = [38.7849, -76.8721];
-  const map = L.map(targetId).setView(latLong, 9);
+  const cordinates = [38.784921, -76.872096];
+  const mapView = L.map(targetId).setView(cordinates, 9);
   L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
     maxZoom: 18,
@@ -29,10 +29,10 @@ function initMap(targetId) {
     tileSize: 512,
     zoomOffset: -1,
     accessToken: 'pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw'
-  }).addTo(map);
-  return map;
+  }).addTo(mapView);
+  return mapView;
 }
-function addMapMarkers(map, collection) {
+function placeMarkers(map, collection) {
   map.eachLayer((layer) => {
     if (layer instanceof L.Marker) {
       layer.remove();
@@ -40,7 +40,7 @@ function addMapMarkers(map, collection) {
   });
   collection.forEach((item) => {
     const point = item.geocoded_column_1?.coordinates;
-    console.log(item.geocoded_column_1?.coordinates);
+    // console.log(item.geocoded_column_1?.coordinates);
     L.marker([point[1], point[0]]).addTo(map);
   });
 }
@@ -99,9 +99,9 @@ async function mainEvent() { // the async keyword means we can make API requests
       submit.style.display = 'block'; // arrayFromJson.data - we're accessing a key called 'data' on the returned object
       // it contains all 1,000 records we need
       currentArray = restoArrayMake(arrayFromJson.data);
-      console.log(currentArray);
+      // console.log(currentArray);
       createHtmlList(currentArray);
-      addMapMarkers(map, currentArray);
+      placeMarkers(map, currentArray);
     });
   }
 }
